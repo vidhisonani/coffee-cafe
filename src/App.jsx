@@ -5,6 +5,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Serives from "./components/Services/Services";
 import About from "./components/About/About";
+import AppStore from "./components/AppStore/AppStore";
+import Testimonial from "./components/Testimonial/Testimonial";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 useEffect(()=>{
@@ -22,6 +25,9 @@ useEffect(()=>{
         <Home/>
         <Serives/>
         <About/>
+        <AppStore/>
+        <Testimonial />
+        <Footer/>
       </div>
     </>
   )
