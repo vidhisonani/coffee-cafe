@@ -64,8 +64,8 @@ function Testimonial() {
           <Slider {...settings}>
             {TestimonialData.map((data, index) => {
               return (
-                <div className="my-6 w-full" key={data.id}>
-                    <div className="w-full min-h-[220px] sm:min-h-[250px] lg:min-h-[280px] flex flex-col gap-4 shadow-lg py-8 px-6 mx-0 sm:mx-4 rounded-xl bg-primary/10 dark:bg-coffeeDark dark:shadow-black/40 relative">
+                <div className="my-6" key={data.id}>
+                    <div className="min-h-[220px] sm:min-h-[250px] lg:min-h-[280px] flex flex-col gap-4 shadow-lg py-8 px-6 mx-0 sm:mx-4 rounded-xl bg-primary/10 dark:bg-coffeeDark dark:shadow-black/40 relative">
                     <div className="mb-4">
                       <img
                         src={data.img}
