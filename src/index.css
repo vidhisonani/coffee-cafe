@@ -7,6 +7,13 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.slick-list {
+  overflow: hidden !important;
+}
+
+.slick-track {
+  display: flex !important;
+}
 @theme {
   --color-primary: #854d3d; /* coffee brown */
   --color-secondary: #4a1e1b; /* dark roast */

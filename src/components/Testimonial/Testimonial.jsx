@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+
 function Testimonial() {
   const TestimonialData = [
     {
@@ -33,63 +34,66 @@ function Testimonial() {
       img: "https://randomuser.me/api/portraits/men/81.jpg",
     },
   ];
+
+  const [slides, setSlides] = useState(3);
+  const [sliderKey, setSliderKey] = useState(0);
+
+  useEffect(() => {
+    const updateSlides = () => {
+      const width = window.innerWidth;
+      if (width < 640) setSlides(1);
+      else if (width < 1024) setSlides(2);
+      else setSlides(3);
+    };
+
+    updateSlides(); // on load
+    window.addEventListener("resize", updateSlides);
+
+    // force slick rebuild AFTER width is correct
+    setTimeout(() => setSliderKey(prev => prev + 1), 200);
+
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
   const settings = {
     dots: true,
     arrows: false,
     infinite: true,
     speed: 500,
+    slidesToShow: slides,
     slidesToScroll: 1,
-    slidesToShow: 3,
     autoplay: true,
     autoplaySpeed: 2000,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
   };
 
   return (
-    <div className="py-14 dark:bg-coffeeLight">
-      <div className="mx-auto">
-        <div data-aos="fade up" className="text-center mb-20">
+    <div className="py-14 dark:bg-coffeeLight overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <div data-aos="fade-up" className="text-center mb-20">
           <h1 className="text-4xl font-bold font-cursive text-gray-800">
             Testimonials
           </h1>
         </div>
-        <div data-aos="zoom-in">
-          <Slider {...settings}>
-            {TestimonialData.map((data, index) => {
-              return (
-                <div className="my-6 w-full" key={data.id}>
-                  <div className="min-h-[250px] sm:min-h-[280px] lg:min-h-[300px] flex flex-col gap-4 shadow-lg py-8 px-6 mx-0 sm:mx-4 rounded-xl bg-primary/10 dark:bg-coffeeDark dark:shadow-black/40 relative">
-                    <div className="mb-4">
-                      <img
-                        src={data.img}
-                        alt={data.id}
-                        className="rounded-full w-20 h-20 mx-auto"
-                      />
-                    </div>
-                    <div className="flex flex-col items-center gap-4">
-                      <div className="space-y-3">
-                        <p className="text-xs text-gray-600 dark:text-gray-300">
-                          {data.text}
-                        </p>
-                        <h1 className="text-xl font-bold text-black/70 dark:text-coffeeLight font-cursive">
-                          {data.name}
-                        </h1>
-                      </div>
-                    </div>
-                    <p className="text-black/20 dark:text-coffeeLight text-9xl font-serif absolute top-0 right-0">
-                      ,,
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
+
+        <Slider key={sliderKey} {...settings}>
+          {TestimonialData.map((data) => (
+            <div key={data.id} className="px-2">
+              <div className="min-h-[260px] flex flex-col gap-4 shadow-lg py-8 px-6 rounded-xl bg-primary/10 dark:bg-coffeeDark relative">
+                <img
+                  src={data.img}
+                  alt={data.name}
+                  className="w-20 h-20 rounded-full mx-auto"
+                />
+                <p className="text-xs text-center text-gray-600 dark:text-gray-300">
+                  {data.text}
+                </p>
+                <h2 className="text-lg font-bold text-center font-cursive dark:text-coffeeLight">
+                  {data.name}
+                </h2>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );
