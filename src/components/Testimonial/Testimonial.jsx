@@ -54,13 +54,13 @@ function Testimonial() {
 
   return (
     <div className="py-14 dark:bg-coffeeLight">
-      <div className="container mx-auto">
-        <div className="text-center mb-20">
+      <div className="mx-auto">
+        <div data-aos="fade up" className="text-center mb-20">
           <h1 className="text-4xl font-bold font-cursive text-gray-800">
             Testimonials
           </h1>
         </div>
-        <div>
+        <div data-aos="zoom-in">
           <Slider {...settings}>
             {TestimonialData.map((data, index) => {
               return (

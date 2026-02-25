@@ -17,7 +17,7 @@ function Home() {
               <span
                 data-aos="zoom-out"
                 data-aos-delay="300"
-                className="text-primary font-cursive"
+                className="dark:text-primary font-cursive text-coffeeDark"
               >
                 Coffee
               </span>{" "}
@@ -30,8 +30,8 @@ function Home() {
               </button>
             </div>
           </div>
-          <div className="flex justify-center items-center">
-            <img
+          <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center items-center">
+            <img  
               src={HeroImg}
               alt="coffee"
               className="w-75 sm:w-112.5 spin drop-shadow-2xl dark:brightness-110 dark:drop-shadow-[0_0_35px_rgba(200,159,148,0.3)] transition-all duration-500

@@ -16,7 +16,6 @@ html {
   --color-coffeeDark: #3b1a14; /* dark mocha */
 
   --font-cursive: "Pacifico", cursive;
-  --container-padding: 1rem;
 }
 
 @layer utilities {

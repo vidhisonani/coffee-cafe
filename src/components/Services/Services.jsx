@@ -32,7 +32,7 @@ function Serives() {
     <>
       <div id="services" className="scroll-mt-28"></div>
       <div className="py-16 bg-linear-to-br from-coffeeLight to-white dark:from-brandDark dark:to-coffeeDark">
-        <div className="container mx-auto">
+        <div className="mx-auto">
           <div className="text-center mb-14">
             <h1 className="text-3xl sm:text-4xl font-bold font-cursive text-gray-800 dark:text-coffeeLight">
               Best Coffee For You
