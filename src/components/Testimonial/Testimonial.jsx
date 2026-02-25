@@ -42,11 +42,9 @@ function Testimonial() {
     slidesToShow: 3,
     autoplay: true,
     autoplaySpeed: 2000,
-    cssEase: "linear",
     pauseOnHover: true,
     pauseOnFocus: true,
     responsive: [
-      { breakpoint: 10000, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
       { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
@@ -64,8 +62,8 @@ function Testimonial() {
           <Slider {...settings}>
             {TestimonialData.map((data, index) => {
               return (
-                <div className="my-6" key={data.id}>
-                    <div className="min-h-[220px] sm:min-h-[250px] lg:min-h-[280px] flex flex-col gap-4 shadow-lg py-8 px-6 mx-0 sm:mx-4 rounded-xl bg-primary/10 dark:bg-coffeeDark dark:shadow-black/40 relative">
+                <div className="my-6 w-full" key={data.id}>
+                  <div className="min-h-[250px] sm:min-h-[280px] lg:min-h-[300px] flex flex-col gap-4 shadow-lg py-8 px-6 mx-0 sm:mx-4 rounded-xl bg-primary/10 dark:bg-coffeeDark dark:shadow-black/40 relative">
                     <div className="mb-4">
                       <img
                         src={data.img}
