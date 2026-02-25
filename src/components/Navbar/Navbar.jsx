@@ -55,7 +55,7 @@ function Navbar() {
             <div className="flex items-center gap-3">
               <button
                 onClick={toggleTheme}
-                className="rounded-full p-2 bg-white/10 dark:bg-black/20 hover:scale-110 transition-all duration-300"
+                className="rounded-full p-2 mr-2 bg-white/10 dark:bg-black/20 hover:scale-110 transition-all duration-300"
               >
                 {theme === "light" ? (
                   /* Sun → coffee cream */
