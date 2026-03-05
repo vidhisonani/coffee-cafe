@@ -58,17 +58,6 @@ function Navbar() {
                 className="rounded-full p-2 mr-2 bg-white/10 dark:bg-black/20 hover:scale-110 transition-all duration-300"
               >
                 {theme === "light" ? (
-                  /* Sun → coffee cream */
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    className="w-7 h-7 text-coffeeLight"
-                    fill="currentColor"
-                  >
-                    {/* sun path */}
-                    <path d="M12 6.25c3.176 0 5.75 2.574 5.75 5.75S15.176 17.75 12 17.75 6.25 15.176 6.25 12 8.824 6.25 12 6.25Z" />
-                  </svg>
-                ) : (
                   /* Moon → espresso */
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -78,6 +67,17 @@ function Navbar() {
                   >
                     {/* moon path */}
                     <path d="M10.516 2.043c.18.234.206.55.067.81A8.21 8.21 0 0 0 9.668 6.525c0 4.312 3.495 7.807 7.807 7.807 1.329 0 2.578-.331 3.672-.915.259-.139.576-.113.81.067.234.18.34.48.273.767-1.074 4.585-5.189 8-10.103 8C6.396 22.25 1.75 17.604 1.75 11.873c0-4.914 3.415-9.029 8-10.103.287-.067.587.039.766.273Z" />
+                  </svg>
+                ) : (
+                  /* Sun → coffee cream */
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-7 h-7 text-coffeeLight"
+                    fill="currentColor"
+                  >
+                    {/* sun path */}
+                    <path d="M12 6.25c3.176 0 5.75 2.574 5.75 5.75S15.176 17.75 12 17.75 6.25 15.176 6.25 12 8.824 6.25 12 6.25Z" />
                   </svg>
                 )}
               </button>
